@@ -1,0 +1,6 @@
+---
+const {href, name} = Astro.props
+---
+<a aria-label="nav-ink" class="cursor-pointer text-lg hover:text-white text-gray-400 transition-all duration-400" aria-label={name} href={href}>
+    <slot/>
+</a>
