@@ -1,0 +1,20 @@
+---
+import type { PathOptions } from '../constants'
+import Link from './Link.astro'
+
+
+interface Props {
+    items:PathOptions[] 
+}
+const {items} = Astro.props
+
+---
+
+<nav class="hidden md:flex md:gap-10 md:text-md md:items center">
+   {items.map((path) => 
+        <Link name={path.name} href={path.path}>
+            {path.name}
+        </Link>
+     )}
+   
+</nav>
