@@ -1,0 +1,25 @@
+---
+const {id, stringProps, speed} = Astro.props
+
+---
+
+<span id={id} class="bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-xl text-transparent md:text-3xl"> </span>
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+  <script define:vars={{ id, stringProps, speed }}>
+    document.addEventListener('DOMContentLoaded', () => {
+      // @ts-ignore
+      if (window.Typed) {
+        // @ts-ignore
+        new window.Typed(`#${id}`, {
+          strings: stringProps,
+          typeSpeed: speed,
+          backSpeed: 30,
+          smartBackspace: true,
+          loop: true,
+          cursorChar: '⼁'
+        });
+      }
+    });
+  </script>
