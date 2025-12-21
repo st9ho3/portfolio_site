@@ -1,0 +1,15 @@
+---
+import DropDownMenu from './DropDownMenu.astro';
+import { languageOptions} from '../constants';
+
+---
+
+<div class="dropdown-container">
+    <button class="menu-trigger flex justify-center items-center text-lg cursor-pointer p-1 rounded-lg hover:bg-gray-700 transition-colors duration-300">
+        En
+    </button>
+
+    <DropDownMenu  items={languageOptions}/>
+</div>
+
+

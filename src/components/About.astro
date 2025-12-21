@@ -1,0 +1,15 @@
+---
+import TypedAnimation from "./TypedAnimation.astro";
+import { about } from "../constants";
+---
+
+<section class="md:mt-150 justify-center p-5" id="aboutme">
+<h1 id="aboutmeTitle" class='bg-linear-to-r from-gray-700 via-gray-400 to-white bg-clip-text text-transparent text-4xl md:text-7xl mb-10 p-5'>
+     {about.title}
+</h1>
+<div class="h-90">
+    <TypedAnimation id="about" stringProps={about.body} speed=9 />
+</div>
+
+</section>
+

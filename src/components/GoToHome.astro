@@ -1,0 +1,22 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<a href="#"  >
+<div class="gotohome hidden transition-all justify-center text-3xl items-center fixed bottom-10 right-10 cursor-pointer w-15 h-15 md:w-20 md:h-20 border border-blue-500 rounded-full shadow-sm hover:shadow-md hover:scale-110 hover:bg-black duration-300 shadow-blue-300" aria-label="go to home button">
+    <Icon name="lucide:arrow-up"  />
+</div>
+</a>
+
+<script>
+    const showGoToHome = (y: number) => {
+        const button = document.querySelector('.gotohome')
+        if (y > 250) {
+            button?.classList.remove('hidden')
+            button?.classList.add('flex')
+        } else {
+            button?.classList.add('hidden')
+        }
+    }
+    document.addEventListener('scroll', () => showGoToHome(scrollY))
+</script>

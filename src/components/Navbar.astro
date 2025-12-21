@@ -1,5 +1,6 @@
 ---
 import type { PathOptions } from '../constants'
+import LangOption from './LangOption.astro'
 import Link from './Link.astro'
 
 
@@ -16,5 +17,5 @@ const {items} = Astro.props
             {path.name}
         </Link>
      )}
-   
+   <LangOption />
 </nav>
