@@ -1,0 +1,40 @@
+---
+import { Icon } from 'astro-icon/components';
+import DropDownMenu from './DropDownMenu.astro';
+import { navBarPaths } from '../constants';
+---
+<nav class="dropdown-container relative md:hidden md:gap-10 md:text-md md:items-center">
+    <button class="menu-trigger outline-none">
+        <Icon name='hamburger' width={20} height={20} class="w-5 h-5 transition-transform hover:scale-105 duration-300" />
+    </button>
+    <DropDownMenu type='nav' items={navBarPaths}/>
+</nav>
+
+
+<script>
+  const containers = document.querySelectorAll('.dropdown-container');
+
+  containers.forEach((container) => {
+    const trigger = container.querySelector('.menu-trigger');
+    const menu = container.querySelector('.dropdown-menu');
+    const elements =container.querySelectorAll('.dropdown-element')
+    
+    trigger?.addEventListener('click', (e) => {
+      e.stopPropagation(); 
+      menu?.classList.toggle('hidden');
+    });
+
+    elements.forEach((element) => {
+      element?.addEventListener('click', (e) => {
+      menu?.classList.add('hidden');
+    });
+    })
+    
+
+    document.addEventListener('click', (event) => {
+      if (!container.contains(event.target as Node)) {
+        menu?.classList.add('hidden');
+      }
+    });
+  });
+</script>

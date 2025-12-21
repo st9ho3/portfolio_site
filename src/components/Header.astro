@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon/components';
 import Navbar from './Navbar.astro';
 import Link from './Link.astro';
 import {navBarPaths} from '../constants.ts'
+import MobileNavBar from './MobileNavBar.astro';
 ---
 
 <header class="flex fixed top-0 z-10 mb-5 items-center justify-between w-full px-8 ">
@@ -10,4 +11,5 @@ import {navBarPaths} from '../constants.ts'
         <Icon name='astro' width={50} height={80} class="w-12 md:w-16 h-20 transition-transform hover:scale-105 duration-300" />
     </Link>
     <Navbar items={navBarPaths}/>
+    <MobileNavBar />
 </header>
