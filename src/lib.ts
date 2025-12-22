@@ -8,17 +8,11 @@ export const getText = (id: string) => {
   if (id === 'about') {
     return 'px-10 text-white text-md text-transparent md:text-2xl'
   }
-
 }
 
 export const getData = async(requestUrl: string) => {
-  
-  const res = await fetch(`${requestUrl}`, {
-    headers: {
-        'Content-Type': 'application/json'
-    }
-})
-
-const {aboutText, aboutTitle} = await res.json()
-return {aboutText, aboutTitle}
+  const res = await fetch(`${requestUrl}`)
+  const about = await res.json()
+  return about
 }
+
