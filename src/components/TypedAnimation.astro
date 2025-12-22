@@ -1,9 +1,10 @@
 ---
+import { getText } from "../lib"
 const {id, stringProps, speed} = Astro.props
 
 ---
 
-<span id={id} class="bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-xl text-transparent md:text-3xl"> </span>
+<span id={id} class={getText(id)} aria-labale="animated-text"> </span>
 
 <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
