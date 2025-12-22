@@ -68,3 +68,8 @@ export const slides = [
     title: "Github explorer" 
   }
 ];
+
+export const footer = {
+  currentYear : new Date().getFullYear(),
+  name: 'Panagiotis Stachoulis'
+}

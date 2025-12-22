@@ -1,3 +1,30 @@
-<nav>
-    Footer
-</nav>
+---
+import  Instagram  from "@lucide/astro/icons/instagram"
+import  Github  from "@lucide/astro/icons/Github"
+import  Linkedin  from "@lucide/astro/icons/Linkedin"
+import Link from "./Link.astro"
+import {footer} from '../constants'
+---
+
+<footer class="flex flex-col gap-8 bg-black opacity-90 pb-10 items-center">
+    <div class="flex gap-5">
+        <Link>
+            Home
+        </Link>
+        <Link>
+            About
+        </Link>
+        <Link>
+            Projects
+        </Link>
+        <Link>
+            Contact
+        </Link>
+    </div>
+    <div class="flex gap-5">
+        <Instagram />
+        <Github />
+        <Linkedin />
+    </div>
+    <p>&copy; {footer.currentYear} {footer.name}.</p>
+</footer>
