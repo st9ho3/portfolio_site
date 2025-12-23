@@ -3,23 +3,21 @@ import  Instagram  from "@lucide/astro/icons/instagram"
 import  Github  from "@lucide/astro/icons/Github"
 import  Linkedin  from "@lucide/astro/icons/Linkedin"
 import Link from "./Link.astro"
-import {footer} from '../constants'
+import {buildNavPaths, footer} from '../constants'
+import { getLangFromURL, useTranslation } from "../i18n/helpers"
+
+const language = getLangFromURL(Astro.url)
+const navPaths = buildNavPaths(language)
+const t = useTranslation(language)
 ---
 
 <footer class="flex flex-col gap-8 bg-black opacity-90 pb-10 items-center">
     <div class="flex gap-5">
-        <Link name="home-link" href="#" line={true}>
-            Home
+        {navPaths.map((path) => 
+        <Link name={path.name} href={path.path} line={true}>
+            {path.name ? t(path.name) : ''}
         </Link>
-        <Link name="about-link" href="#about" line={true}>
-            About
-        </Link>
-        <Link name="projects-link" href="#projects" line={true}>
-            Projects
-        </Link>
-        <Link name="contact-link" href="#contact" line={true}>
-            Contact
-        </Link>
+     )}
     </div>
     <div class="flex gap-5">
         <Instagram />

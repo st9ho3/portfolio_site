@@ -3,7 +3,7 @@
   import ChevronLeft from 'lucide-svelte/icons/chevron-left';
   import { onMount } from 'svelte';
   
-  export let images: { src: string; alt: string; title?: string }[] = [];
+  export let images: { src: string; alt: string; title?: string}[] = [];
   export let autoSlide: boolean = false;
   export let autoSlideInterval: number = 3000;
 
@@ -44,7 +44,7 @@
         />
         {#if image.title}
           <div class="absolute bottom-0 left-0 right-0 bg-black/50 p-4 text-white backdrop-blur-sm">
-            <h3 class="text-lg font-bold">{image.title}</h3>
+           <h3 class="text-lg font-bold">{image.title}</h3>
           </div>
         {/if}
       </div>

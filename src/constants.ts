@@ -1,4 +1,7 @@
 import type { ui } from "./i18n/ui";
+/* import CostwiseImg from './images/costwise.png'
+import BlogImg from './images/blog.png'
+import GithubExplorer from './images/github_explorer.png' */
 
 export interface PathOptions {
   lang?: string;
@@ -55,16 +58,23 @@ export const slides = [
   { 
     src: 'src/images/costwise.png', 
     alt: "costwise project",
-    title: "Costwise" 
+    title: "Costwise" ,
+    github_url: 'https://github.com/st9ho3/costwise.git',
+    url: 'https://chat-agent-rosy.vercel.app/'
   },
   { 
-    src: "src/images/blog.png", 
+    src: 'src/images/blog.png', 
     alt: "blog project",
-    title: "Log Blog" 
+    title: "Log Blog" ,
+    github_url: 'https://github.com/st9ho3/Nextjs-blog.git',
+    url: 'https://nextjs-blog-ten-liard-59.vercel.app/'
+
   },
   { 
-    src: "src/images/github_explorer.png", 
+    src: 'src/images/github_explorer.png', 
     alt: "github_exporer project",
-    title: "Github explorer" 
+    title: "Github explorer" ,
+    github_url: 'https://github.com/st9ho3/git-explorer.git',
+    url: 'https://git-explorer-nine.vercel.app/'
   }
 ];
