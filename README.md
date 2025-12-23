@@ -20,7 +20,7 @@ Ensure you have **Node.js** installed on your machine.
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/st9ho3/portfolio_site.git](https://github.com/st9ho3/portfolio_site.git)
+    git clone https://github.com/st9ho3/portfolio_site.git
     cd portfolio_site
     ```
 
