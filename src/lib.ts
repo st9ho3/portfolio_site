@@ -11,8 +11,16 @@ export const getText = (id: string) => {
 }
 
 export const getData = async(requestUrl: string) => {
-  const res = await fetch(`${requestUrl}`)
-  const about = await res.json()
-  return about
+  try {
+    
+    const res = await fetch(`${requestUrl}`)
+    const about = await res.json()
+    return about
+
+  } catch(err) {
+
+    throw new Error(`${err}`)
+  }
+  
 }
 

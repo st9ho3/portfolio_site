@@ -2,24 +2,25 @@
 import { Image } from 'astro:assets'
 import githubImage from '../images/github.png'
 import { GITHUB_URL, actions } from '../constants'
+import Button from './Button.astro'
 ---
 <div
       id="actions"
       class="my-20 flex w-fit items-center gap-4 p-2 "
       aria-label="actions-container">
-      <a
-        href={GITHUB_URL}
-        class="duration-600 flex w-50 transform items-center justify-center gap-2 rounded-lg border border-blue-600 px-5 py-2 md:px-8 md:py-3 font-medium text-white transition-all hover:border-blue-300 hover:shadow-md hover:shadow-blue-300 md:w-70 hover:bg-black hover:rounded-4xl focus:ring-opacity-80 active:scale-95">
-        {actions.github}
+      <Button 
+        href={GITHUB_URL}>
+        Check my 
         <span>
           <Image width={40} height={40} alt="gitgub icon" src={githubImage}/>
         </span>
-      </a>
+      </Button>
 
-      <a
-       class="duration-400 flex w-50 transform cursor-pointer items-center justify-center gap-2 rounded-lg border border-blue-600 px-5 py-4 md:px-8 md:py-5 font-medium text-white transition-all hover:border-blue-300 hover:shadow-md hover:shadow-blue-300 md:w-70 hover:bg-black hover:rounded-4xl focus:ring-opacity-80 active:scale-95"
-       href="src/assets/panagiotis_stachoulis_CV.pdf" download>
+      <Button
+        href="src/assets/panagiotis_stachoulis_CV.pdf"
+        download
+        custom="py-6 md:py-7">
         {actions.cv}
-      </a>
+      </Button>
       
     </div>
