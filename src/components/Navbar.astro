@@ -1,12 +1,14 @@
 ---
 import type { PathOptions } from '../constants'
-import LangOption from './LangOption.astro'
 import Link from './Link.astro'
-
+import LangOption from './LangOption.astro'
+import { getLangFromURL, useTranslation } from '../i18n/helpers'
 
 interface Props {
     items:PathOptions[] 
 }
+const language = getLangFromURL(Astro.url)
+const t = useTranslation(language)
 const {items} = Astro.props
 
 ---
@@ -14,8 +16,8 @@ const {items} = Astro.props
 <nav class="hidden md:flex md:gap-10 md:text-md md:items center">
    {items.map((path) => 
         <Link name={path.name} href={path.path} line={true}>
-            {path.name}
+            {path.name ? t(path.name) : ''}
         </Link>
      )}
-   <LangOption />
+     <LangOption />
 </nav>

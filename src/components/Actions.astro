@@ -1,26 +1,32 @@
 ---
 import { Image } from 'astro:assets'
 import githubImage from '../images/github.png'
-import { GITHUB_URL, actions } from '../constants'
-import Button from './Button.astro'
+import { GITHUB_URL } from '../constants.ts'
+import { getLangFromURL, useTranslation } from '../i18n/helpers'
+import Button from '../components/Button.astro'
+
+const language = getLangFromURL(Astro.url)
+const t = useTranslation(language)
 ---
 <div
-      id="actions"
-      class="my-20 flex w-fit items-center gap-4 p-2 "
-      aria-label="actions-container">
-      <Button 
-        href={GITHUB_URL}>
-        Check my 
-        <span>
-          <Image width={40} height={40} alt="gitgub icon" src={githubImage}/>
-        </span>
-      </Button>
+  id="actions"
+  class="my-20 flex w-fit items-center gap-4 p-2"
+  aria-label="actions-container"
+>
+  <Button 
+    href={GITHUB_URL} 
+  >
+    {t('actions.github')}
+    <span>
+      <Image width={40} height={40} alt="github icon" src={githubImage}/>
+    </span>
+  </Button>
 
-      <Button
-        href="src/assets/panagiotis_stachoulis_CV.pdf"
-        download
-        custom="py-6 md:py-7">
-        {actions.cv}
-      </Button>
-      
-    </div>
+  <Button 
+    href="src/assets/panagiotis_stachoulis_CV.pdf" 
+    download
+    custom="py-6 md:py-7"
+  >
+    {t('actions.cv')}
+  </Button>
+</div>

@@ -1,5 +1,6 @@
 ---
 import type { PathOptions } from '../constants'
+import { getLangFromURL, useTranslation } from '../i18n/helpers'
 import LangOption from './LangOption.astro'
 
 interface Props {
@@ -8,6 +9,8 @@ interface Props {
 }
 
 const { items, type } = Astro.props
+const language = getLangFromURL(Astro.url)
+const t = useTranslation(language)
 const currentPath = Astro.url.pathname 
 
 ---
@@ -20,7 +23,7 @@ const currentPath = Astro.url.pathname
       ?<div class="px-4">
         {items.map((item) => (
           <p onclick="" class="dropdown-element text-white my-10 text-3xl hover:text-gray-500 transition-colors duration-300">
-            <a href={item.path}>{item.name }</a>
+            <a href={item.path}>{item.name ? t(item.name) : '' }</a>
           </p>
         ))}
       </div>
