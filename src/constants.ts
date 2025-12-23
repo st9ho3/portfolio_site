@@ -1,7 +1,4 @@
 import type { ui } from "./i18n/ui";
-/* import CostwiseImg from './images/costwise.png'
-import BlogImg from './images/blog.png'
-import GithubExplorer from './images/github_explorer.png' */
 
 export interface PathOptions {
   lang?: string;
