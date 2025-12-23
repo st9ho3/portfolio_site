@@ -1,12 +1,16 @@
 ---
-import { slides } from "../constants"
-import Carousel from "./Carousel.svelte"
+import Carousel from '../components/Carousel.svelte';
+import { getLangFromURL } from "../i18n/helpers";
+import SectionTitle from "./SectionTitle.svelte";
+import {slides} from '../constants'
+
+const language = getLangFromURL(Astro.url)
 ---
 
-<section class="min-h-screen bg-transparent p-8 flex flex-col items-center md:mt-120" id="projects" aria-label="projects-section">
-<h1 id="projectsTitle" class='bg-linear-to-r from-gray-700 via-gray-400 to-white bg-clip-text text-transparent text-4xl md:text-7xl mb-10 p-5'>
-    Selected Works
-</h1>
+<section class="min-h-screen bg-transparent p-8 flex flex-col items-center md:mt-80" id="projects" aria-label="projects-section">
+
+<SectionTitle client:visible direction="left" title='projects.title'  language={language} />
 
 <Carousel client:visible images={slides} autoSlide={true} />
+
 </section>

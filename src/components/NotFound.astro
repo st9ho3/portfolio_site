@@ -1,14 +1,16 @@
 ---
+import { getLangFromURL, useTranslation } from "../i18n/helpers"
 import { getText } from "../lib"
 import Button from "../components/Button.astro" 
 
+const language = getLangFromURL(Astro.url)
+const t = useTranslation(language)
 ---
 
 <div class="h-screen flex flex-col justify-center items-center">
-    <h1 class={getText('title')}>Oops, there's nothing here</h1>
+    <h1 class={getText('title')}>{t('notFound.message')}</h1>
     
-    <Button
-        href="/">
-        Go back
+    <Button href={language === 'el' ? '/el' : '/'}>
+        {t('notFound.button.message')}
     </Button>
 </div>

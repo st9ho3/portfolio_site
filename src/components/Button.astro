@@ -1,14 +1,12 @@
 ---
-const { href, custom, download } = Astro.props;
-
+const { href, custom } = Astro.props;
 const Tag = href ? 'a' : 'button';
-const baseStyle = "duration-400 w-45 flex transform cursor-pointer items-center justify-center gap-2 rounded-lg border border-blue-600 px-5 py-4 md:px-8 md:py-5 font-medium text-white transition-all hover:border-blue-300 hover:shadow-md hover:shadow-blue-300 md:w-70 hover:bg-black hover:rounded-4xl focus:ring-opacity-80 active:scale-95";
+const baseStyles = "duration-400 flex transform cursor-pointer items-center justify-center gap-2 rounded-lg border border-blue-600 px-5 py-4 md:px-8 md:py-5 font-medium text-white transition-all hover:border-blue-300 hover:shadow-md hover:shadow-blue-300 md:w-70 hover:bg-black hover:rounded-4xl focus:ring-opacity-80 active:scale-95";
 ---
 
 
-<Tag
-  href={href}
-  download={download} 
-  class:list={[baseStyle, custom]}>
+<Tag 
+  href={href} 
+  class:list={[baseStyles, custom]}>
   <slot />
 </Tag>

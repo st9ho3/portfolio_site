@@ -1,8 +1,11 @@
 ---
+import { getLangFromURL } from "../i18n/helpers";
 import ContactForm from "./ContactForm.svelte";
+import SectionTitle from "./SectionTitle.svelte";
 
+const language = getLangFromURL(Astro.url)
 ---
-<section class=" md: py-20" id="contact" aria-label="contact">
-    <h1>Contact Form</h1>
-    <ContactForm />
+<section class=" md:py-20" id="contact" aria-label="contact">
+    <SectionTitle client:visible language={language} title='contact.title' direction="right"/>
+    <ContactForm language={language} />
 </section>

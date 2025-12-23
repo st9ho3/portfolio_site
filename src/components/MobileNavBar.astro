@@ -1,13 +1,17 @@
 ---
 import { Icon } from 'astro-icon/components';
 import DropDownMenu from './DropDownMenu.astro';
-import { navBarPaths } from '../constants';
+import { buildNavPaths } from '../constants';
+import { getLangFromURL } from '../i18n/helpers';
+
+const language = getLangFromURL(Astro.url)
+const navPaths = buildNavPaths(language)
 ---
 <nav class="dropdown-container relative md:hidden md:gap-10 md:text-md md:items-center">
     <button class="menu-trigger outline-none">
         <Icon name='hamburger' width={20} height={20} class="w-5 h-5 transition-transform hover:scale-105 duration-300" />
     </button>
-    <DropDownMenu type='nav' items={navBarPaths}/>
+    <DropDownMenu type='nav' items={navPaths}/>
 </nav>
 
 

@@ -1,12 +1,14 @@
 ---
 import DropDownMenu from './DropDownMenu.astro';
 import { languageOptions} from '../constants';
+import { getLangFromURL, useTranslation } from '../i18n/helpers';
 
+const language = getLangFromURL(Astro.url)
 ---
 
-<div class="dropdown-container" aria-label=" dropdown-container">
+<div class="dropdown-container">
     <button class="menu-trigger flex justify-center items-center text-lg cursor-pointer p-1 rounded-lg hover:bg-gray-700 transition-colors duration-300">
-        En
+        {language === 'en' ? "🇬🇧" : "🇬🇷" }
     </button>
 
     <DropDownMenu  items={languageOptions}/>
